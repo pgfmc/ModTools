@@ -14,6 +14,8 @@ import org.bukkit.entity.Player;
   * @author bk
   */
 public class Gamemode implements CommandExecutor {
+	
+	private static Map<String, GameMode> mode = Map.of("gmc", GameMode.CREATIVE, "gms", GameMode.SURVIVAL, "gma", GameMode.ADVENTURE, "gmsp", GameMode.SPECTATOR);
 
 	/**
 	 * Gamemode commands are /gms /gmc /gma /gmsp
@@ -38,9 +40,6 @@ public class Gamemode implements CommandExecutor {
 				return true;
 			}
 		}
-		
-		Map<String, GameMode> mode = Map.of("gmc", GameMode.CREATIVE, "gms", GameMode.SURVIVAL, "gma", GameMode.ADVENTURE, "gmsp", GameMode.SPECTATOR);
-		
 		
 		p.setGameMode(mode.get(label));
 		p.sendMessage("§6Gamemode has been set to " + mode.get(label).toString().toLowerCase() + ".");
