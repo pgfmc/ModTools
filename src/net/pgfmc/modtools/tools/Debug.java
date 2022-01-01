@@ -24,7 +24,7 @@ public class Debug implements CommandExecutor {
 		
 		if (p != null) {
 			
-			boolean t = p.getDebug();
+			boolean t = p.isDebug();
 			
 			if (t) {
 				p.sendMessage("§6Debug disabled!");
